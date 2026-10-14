@@ -654,15 +654,12 @@
             <p class="font-serif-title text-lg text-blush-accent font-medium">そんなあなたは……</p>
           </div>
 
-          <div class="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6">
+          <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto mb-6">
             <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-rose-main to-blush-accent opacity-30 blur-lg animate-pulse"></div>
             
             <div id="typeImageContainer" class="relative w-full h-full rounded-2xl overflow-hidden border-2 border-blush-accent/50 bg-burgundy-darker flex items-center justify-center shadow-inner">
             </div>
             
-            <div class="absolute -bottom-2 -right-2 bg-rose-main text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow border border-white/20">
-              TYPE <span id="typeCodeBadge"></span>
-            </div>
           </div>
 
           <div class="text-center mb-6">
@@ -1717,7 +1714,6 @@
 
         // SECTION 04: そんなあなたは……
         const t = this.resultType;
-        document.getElementById("typeCodeBadge").textContent = t.code;
         document.getElementById("typeCatchphrase").textContent = t.catch;
         document.getElementById("typeName").textContent = t.name;
         document.getElementById("typeTrait1").textContent = t.traits[0];
@@ -1763,7 +1759,6 @@
               <div class="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-3xl text-rose-light mb-2 shadow-inner">
                 <i class="fa-solid fa-${iconName}"></i>
               </div>
-              <span class="text-[10px] uppercase tracking-widest text-blush-accent font-bold opacity-80">${type.code}</span>
               <span class="text-xs font-serif-title font-bold text-white mt-0.5">${type.name}</span>
             </div>
           </div>
@@ -2013,7 +2008,7 @@
           mode === "story" ? "Instagramストーリーズ用画像" : "結果カード画像";
         document.getElementById("cardPreviewGuide").textContent =
           mode === "story"
-            ? "画像を長押しして「写真に保存」した後、Instagramのストーリーズ作成画面で選択してください。（PCの場合は右クリックで保存）"
+            ? "画像を長押しして「写真に保存」した後、Instagramのストーリーズ作成画面で選択してください。結果URLはコピー済みなので、スタンプの「リンク」に貼り付けるとリンク付きでシェアできます。（PCの場合は右クリックで保存）"
             : "画像を長押しして「写真に保存」してください。（PCの場合は右クリックで保存）";
         this.openModal("cardPreviewModal");
       }
@@ -2072,6 +2067,23 @@
         ctx.textAlign = "left";
 
         const { dataUrl, file } = this.canvasToFile(sc, `secret_diagnosis_story_${t.code}.png`);
+
+        // リンクスタンプ用に結果URLを自動コピー（共有シートより先に同期で実行）
+        const sharePayload = `${this.levels.N}${this.levels.D}${this.levels.T}${this.levels.A}${this.levels.S}`;
+        const resultUrl = `${window.location.origin}${window.location.pathname}#res=${sharePayload}`;
+        try {
+          const el = document.createElement("textarea");
+          el.value = resultUrl;
+          el.setAttribute("readonly", "");
+          el.style.position = "absolute";
+          el.style.left = "-9999px";
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand("copy");
+          document.body.removeChild(el);
+          this.showToast("URLをコピーしました。ストーリーズの「リンク」スタンプに貼り付けてください", "fa-link");
+        } catch (e) {}
+
         this.shareImageFile(file, dataUrl, "story");
       }
 
