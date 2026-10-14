@@ -285,14 +285,19 @@
             </button>
           </div>
 
-          <!-- TOP PAGE ADVERTISEMENT CONTAINER -->
+          <!-- ========================================== -->
+          <!-- 【広告枠 1】TOP PAGE 広告スロット（300x250 / レスポンシブ） -->
+          <!-- 貼り付け方法: 下記の <div class="ad-placeholder..."> 内をASPバナーやAdSenseタグに差し替えてください -->
+          <!-- ========================================== -->
           <div class="mt-6 pt-5 border-t border-blush-accent/50 text-center" id="adTopContainer">
-            <span class="text-[10px] tracking-widest text-ink-faint uppercase block mb-1.5">SPONSORED</span>
-            <div class="w-full min-h-[90px] bg-ivory-warm rounded-2xl border border-dashed border-blush-accent flex flex-col items-center justify-center p-3 text-xs text-ink-muted">
+            <span class="text-[10px] tracking-widest text-ink-faint uppercase block mb-1.5">SPONSORED / 広告</span>
+            <div class="w-full min-h-[100px] bg-ivory-warm rounded-2xl border border-dashed border-blush-accent flex flex-col items-center justify-center p-3 text-xs text-ink-muted overflow-hidden">
+              <!-- ▼▼ ここにトップページ広告コード（Google AdSense / 忍者AdMax / ASPバナー等）を挿入 ▼▼ -->
               <p class="font-medium text-rose-main flex items-center gap-1.5">
-                <i class="fa-solid fa-rectangle-ad"></i> 広告・PR掲載スペース
+                <i class="fa-solid fa-rectangle-ad"></i> トップページ広告掲載スペース
               </p>
-              <p class="text-[11px] text-ink-faint mt-0.5">（運用開始時に広告タグをここに挿入します）</p>
+              <p class="text-[11px] text-ink-faint mt-0.5">（AdSenseタグやバナー広告コードをここに配置）</p>
+              <!-- ▲▲ ここまで ▲▲ -->
             </div>
           </div>
 
@@ -477,6 +482,20 @@
           <div class="w-48 h-1.5 bg-blush-soft rounded-full mx-auto mt-6 overflow-hidden">
             <div id="calcProgress" class="h-full bg-rose-main transition-all duration-700 ease-out" style="width: 20%;"></div>
           </div>
+
+          <!-- ========================================== -->
+          <!-- 【広告枠 2】計算待機中 ミニPRスロット（ユーザー注視率No.1） -->
+          <!-- ========================================== -->
+          <div class="mt-8 pt-4 border-t border-blush-accent/40 text-center">
+            <span class="text-[9px] tracking-widest text-ink-faint uppercase block mb-1">RECOMMENDED</span>
+            <div class="inline-block p-2.5 px-4 rounded-xl bg-ivory-warm/80 border border-blush-accent/60 text-[11px] text-ink-muted max-w-sm">
+              <!-- ▼▼ 短いテキスト広告や小さめのバナーリンク（マッチングアプリ等） ▼▼ -->
+              <span class="text-rose-main font-semibold">【PR】</span>
+              <span>診断完了後、あなたと相性抜群の相手がすぐ見つかるマッチングアプリをご案内します。</span>
+              <!-- ▲▲ ここまで ▲▲ -->
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -668,21 +687,26 @@
             </div>
           </div>
 
-          <!-- RESULT NATIVE PROMOTION / AFFILIATE CONTAINER -->
+          <!-- ========================================== -->
+          <!-- 【広告枠 3】結果発表直下：最高成約率（高単価マッチングアプリ推奨枠） -->
+          <!-- 貼り付け方法: aタグのhrefをASPのアフィリエイトURLに書き換えてください -->
+          <!-- ========================================== -->
           <div class="mt-6 bg-white/10 rounded-2xl p-4 border border-rose-light/40 text-center">
-            <span class="text-[10px] tracking-widest uppercase text-blush-accent/80 block mb-1">RECOMMENDED</span>
+            <span class="text-[10px] tracking-widest uppercase text-blush-accent/80 block mb-1">RECOMMENDED PARTNER</span>
             <p class="text-xs font-serif-title font-bold text-white mb-2">
-              あなたの診断タイプにぴったりの出会いを探す
+              あなたと波長が合う「理想の恋人・パートナー」を探す
             </p>
-            <div class="p-3 rounded-xl bg-ivory-warm text-ink-brown text-xs flex flex-col sm:flex-row items-center justify-between gap-2.5 shadow-md">
-              <div class="text-left">
+            <div class="p-3.5 rounded-xl bg-ivory-warm text-ink-brown text-xs flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md">
+              <div class="text-left flex-grow">
                 <span class="inline-block px-2 py-0.5 rounded bg-rose-main text-white text-[10px] font-bold mb-1">PR</span>
                 <p class="font-bold text-burgundy-deep text-xs sm:text-sm">相性の良いパートナーと出会える人気マッチングアプリ</p>
-                <p class="text-[11px] text-ink-muted">会員数多数・女性無料・安心の年齢確認体制</p>
+                <p class="text-[11px] text-ink-muted mt-0.5">会員数多数・24時間監視・価値観や相性重視でマッチ</p>
               </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 rounded-xl bg-gradient-to-r from-rose-main to-burgundy-deep text-white font-bold text-xs shadow hover:opacity-95 transition-all">
-                詳細をみる <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+              <!-- ▼▼ アフィリエイトURL挿入箇所（A8.net、afb等のアフィリエイトリンク） ▼▼ -->
+              <a href="https://example.com/affiliate-link" target="_blank" rel="noopener noreferrer nofollow" class="w-full sm:w-auto shrink-0 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-main to-burgundy-deep text-white font-bold text-xs shadow hover:opacity-95 transition-all text-center">
+                無料で試してみる <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
               </a>
+              <!-- ▲▲ ここまで ▲▲ -->
             </div>
           </div>
 
@@ -726,6 +750,21 @@
               <i class="fa-solid fa-arrow-rotate-right text-sm"></i>
               <span>診断をもう一度行う</span>
             </button>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- 【広告枠 4】結果ページ最下部バナー（レスポンシブ / 300x250等） -->
+          <!-- ========================================== -->
+          <div class="pt-4 border-t border-blush-accent/60 text-center" id="adResultBottomContainer">
+            <span class="text-[10px] tracking-widest text-ink-faint uppercase block mb-1.5">SPONSORED / 広告</span>
+            <div class="w-full min-h-[100px] bg-ivory-warm rounded-2xl border border-dashed border-blush-accent flex flex-col items-center justify-center p-3 text-xs text-ink-muted overflow-hidden">
+              <!-- ▼▼ ここに広告バナーコード・AdSenseタグを挿入 ▼▼ -->
+              <p class="font-medium text-rose-main flex items-center gap-1.5">
+                <i class="fa-solid fa-rectangle-ad"></i> 結果画面・最下部広告スペース
+              </p>
+              <p class="text-[11px] text-ink-faint mt-0.5">（バナー広告・アドネットワークタグ等をここに挿入）</p>
+              <!-- ▲▲ ここまで ▲▲ -->
+            </div>
           </div>
         </div>
 
