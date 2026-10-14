@@ -10,22 +10,22 @@
   <meta name="keywords" content="恋愛診断,大人の心理テスト,秘密の診断,恋愛タイプ診断,深層心理,恋愛パラメーター,相性診断,無料診断">
   <meta name="author" content="秘密の♡♡♡診断 Project">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="canonical" href="https://example.com/secret-diagnosis/">
+  <link rel="canonical" href="https://secret-diagnosis.kohayakawakohaya.workers.dev/">
   
   <!-- Open Graph Protocol (OGP) for SNS / Twitter -->
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="website">
   <meta property="og:title" content="秘密の♡♡♡診断 | あなたの本当の願望、見抜いちゃうかも。">
   <meta property="og:description" content="全30問・25タイプから導かれる親密なストーリーと秘密のパラメーター。ふだんのあなたと恋するあなたのギャップを暴きます。">
-  <meta property="og:url" content="https://example.com/secret-diagnosis/">
+  <meta property="og:url" content="https://secret-diagnosis.kohayakawakohaya.workers.dev/">
   <meta property="og:site_name" content="秘密の♡♡♡診断">
-  <meta property="og:image" content="https://example.com/secret-diagnosis/images/ogp.png">
+  <meta property="og:image" content="https://secret-diagnosis.kohayakawakohaya.workers.dev/images/ogp.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="秘密の♡♡♡診断 | 大人のための恋愛診断">
   <meta name="twitter:description" content="あなたの本当の願望、見抜いちゃうかも。全30問・25タイプから導かれる親密なストーリー。">
-  <meta name="twitter:image" content="https://example.com/secret-diagnosis/images/ogp.png">
+  <meta name="twitter:image" content="https://secret-diagnosis.kohayakawakohaya.workers.dev/images/ogp.png">
 
   <!-- JSON-LD Structured Data: WebApplication, Quiz, FAQPage -->
   <script type="application/ld+json">
@@ -34,9 +34,9 @@
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://example.com/secret-diagnosis/#app",
+        "@id": "https://secret-diagnosis.kohayakawakohaya.workers.dev/#app",
         "name": "秘密の♡♡♡診断",
-        "url": "https://example.com/secret-diagnosis/",
+        "url": "https://secret-diagnosis.kohayakawakohaya.workers.dev/",
         "applicationCategory": "EntertainmentApplication",
         "operatingSystem": "All",
         "inLanguage": "ja",
@@ -49,7 +49,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://example.com/secret-diagnosis/#faq",
+        "@id": "https://secret-diagnosis.kohayakawakohaya.workers.dev/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -289,7 +289,7 @@
           <!-- 【広告枠 1】TOP PAGE 広告スロット（300x250 / レスポンシブ） -->
           <!-- 貼り付け方法: 下記の <div class="ad-placeholder..."> 内をASPバナーやAdSenseタグに差し替えてください -->
           <!-- ========================================== -->
-          <div class="mt-6 pt-5 border-t border-blush-accent/50 text-center" id="adTopContainer">
+          <div class="mt-6 pt-5 border-t border-blush-accent/50 text-center" id="adTopContainer" hidden>
             <span class="text-[10px] tracking-widest text-ink-faint uppercase block mb-1.5">SPONSORED / 広告</span>
             <div class="w-full min-h-[100px] bg-ivory-warm rounded-2xl border border-dashed border-blush-accent flex flex-col items-center justify-center p-3 text-xs text-ink-muted overflow-hidden">
               <!-- ▼▼ ここにトップページ広告コード（Google AdSense / 忍者AdMax / ASPバナー等）を挿入 ▼▼ -->
@@ -486,7 +486,7 @@
           <!-- ========================================== -->
           <!-- 【広告枠 2】計算待機中 ミニPRスロット（ユーザー注視率No.1） -->
           <!-- ========================================== -->
-          <div class="mt-8 pt-4 border-t border-blush-accent/40 text-center">
+          <div class="mt-8 pt-4 border-t border-blush-accent/40 text-center" id="adLoadingContainer" hidden>
             <span class="text-[9px] tracking-widest text-ink-faint uppercase block mb-1">RECOMMENDED</span>
             <div class="inline-block p-2.5 px-4 rounded-xl bg-ivory-warm/80 border border-blush-accent/60 text-[11px] text-ink-muted max-w-sm">
               <!-- ▼▼ 短いテキスト広告や小さめのバナーリンク（マッチングアプリ等） ▼▼ -->
@@ -691,7 +691,7 @@
           <!-- 【広告枠 3】結果発表直下：最高成約率（高単価マッチングアプリ推奨枠） -->
           <!-- 貼り付け方法: aタグのhrefをASPのアフィリエイトURLに書き換えてください -->
           <!-- ========================================== -->
-          <div class="mt-6 bg-white/10 rounded-2xl p-4 border border-rose-light/40 text-center">
+          <div class="mt-6 bg-white/10 rounded-2xl p-4 border border-rose-light/40 text-center" id="adMatchingContainer" hidden>
             <span class="text-[10px] tracking-widest uppercase text-blush-accent/80 block mb-1">RECOMMENDED PARTNER</span>
             <p class="text-xs font-serif-title font-bold text-white mb-2">
               あなたと波長が合う「理想の恋人・パートナー」を探す
@@ -728,9 +728,14 @@
               <span>Xで結果をシェア</span>
             </button>
 
-            <button onclick="app.generateAndDownloadCard()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-rose-main to-rose-dark text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-transform active:scale-98">
-              <i class="fa-solid fa-download text-sm"></i>
+            <button onclick="app.saveCardImage()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-rose-main to-rose-dark text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-transform active:scale-98">
+              <i class="fa-solid fa-image text-sm"></i>
               <span>結果カード画像を保存</span>
+            </button>
+
+            <button onclick="app.shareToInstagramStory()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-transform active:scale-98">
+              <i class="fa-brands fa-instagram text-sm"></i>
+              <span>インスタのストーリーズでシェア</span>
             </button>
 
             <button onclick="app.copyResultUrl()" class="py-3 px-4 rounded-xl bg-ivory-warm hover:bg-blush-soft text-burgundy-deep border border-blush-accent text-xs font-medium flex items-center justify-center gap-2 transition-colors">
@@ -738,13 +743,7 @@
               <span id="copyUrlBtnText">結果リンクをコピー</span>
             </button>
 
-            <button onclick="app.triggerImageUpload()" class="py-3 px-4 rounded-xl bg-ivory-warm hover:bg-blush-soft text-burgundy-deep border border-blush-accent text-xs font-medium flex items-center justify-center gap-2 transition-colors">
-              <i class="fa-solid fa-image text-sm text-rose-main"></i>
-              <span>イラスト画像を設定</span>
-            </button>
 
-            <!-- 複数画像の一括読み込み対応ファイルインプット -->
-            <input type="file" id="imageFileInput" accept="image/*" multiple class="hidden" onchange="app.handleImageFiles(this.files)">
 
             <button onclick="app.showResetConfirm()" class="py-3 px-4 rounded-xl bg-ivory-warm hover:bg-blush-soft text-ink-muted hover:text-burgundy-deep border border-blush-accent text-xs font-medium flex items-center justify-center gap-2 transition-colors sm:col-span-2">
               <i class="fa-solid fa-arrow-rotate-right text-sm"></i>
@@ -755,7 +754,7 @@
           <!-- ========================================== -->
           <!-- 【広告枠 4】結果ページ最下部バナー（レスポンシブ / 300x250等） -->
           <!-- ========================================== -->
-          <div class="pt-4 border-t border-blush-accent/60 text-center" id="adResultBottomContainer">
+          <div class="pt-4 border-t border-blush-accent/60 text-center" id="adResultBottomContainer" hidden>
             <span class="text-[10px] tracking-widest text-ink-faint uppercase block mb-1.5">SPONSORED / 広告</span>
             <div class="w-full min-h-[100px] bg-ivory-warm rounded-2xl border border-dashed border-blush-accent flex flex-col items-center justify-center p-3 text-xs text-ink-muted overflow-hidden">
               <!-- ▼▼ ここに広告バナーコード・AdSenseタグを挿入 ▼▼ -->
@@ -777,7 +776,7 @@
   <footer class="w-full border-t border-blush-accent/60 bg-ivory-warm/90 py-6 text-center text-xs text-ink-faint">
     <div class="max-w-xl mx-auto px-4 space-y-2">
       <div class="flex items-center justify-center gap-4 text-ink-muted">
-        <a href="javascript:void(0)" onclick="app.openModal('privacyModal')" class="hover:text-rose-main transition-colors">プライバシー方針</a>
+        <a href="javascript:void(0)" onclick="app.openModal('privacyModal')" class="hover:text-rose-main transition-colors">プライバシー方針・運営者情報</a>
         <span>•</span>
         <a href="javascript:void(0)" onclick="app.openModal('termsModal')" class="hover:text-rose-main transition-colors">利用規約</a>
         <span>•</span>
@@ -830,11 +829,23 @@
     </div>
   </div>
 
+  <!-- Card Preview Modal（共有シート非対応端末向け：長押し保存） -->
+  <div id="cardPreviewModal" class="fixed inset-0 z-50 bg-burgundy-darker/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-5 max-w-md w-full shadow-2xl border border-blush-accent text-center fade-in max-h-[90vh] flex flex-col">
+      <h3 id="cardPreviewTitle" class="font-serif-title text-base font-bold text-burgundy-deep mb-3">結果カード画像</h3>
+      <div class="overflow-y-auto flex-grow">
+        <img id="cardPreviewImg" alt="診断結果カード" class="w-full h-auto rounded-xl border border-blush-accent/60 mx-auto" style="max-height:60vh;object-fit:contain;-webkit-touch-callout:default;">
+      </div>
+      <p id="cardPreviewGuide" class="text-xs text-ink-muted mt-3 leading-relaxed"></p>
+      <button onclick="app.closeModal('cardPreviewModal')" class="mt-4 w-full py-2.5 rounded-xl bg-burgundy-deep text-white text-xs font-bold">閉じる</button>
+    </div>
+  </div>
+
   <!-- Privacy Modal -->
   <div id="privacyModal" class="fixed inset-0 z-50 bg-burgundy-darker/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-md w-full shadow-2xl border border-blush-accent text-left fade-in max-h-[85vh] flex flex-col">
       <h3 class="font-serif-title text-lg font-bold text-burgundy-deep mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-lock text-rose-main"></i> プライバシーと安全性
+        <i class="fa-solid fa-lock text-rose-main"></i> プライバシー方針・運営者情報
       </h3>
       <div class="text-xs text-ink-muted space-y-2.5 overflow-y-auto pr-1 flex-grow">
         <p><strong>1. 完全クライアント側処理:</strong><br>
@@ -843,6 +854,11 @@
         回答途中の再読み込み復元のために端末内LocalStorageを使用します。診断終了時のリセットボタンでいつでも完全に消去可能です。</p>
         <p><strong>3. 科学的診断の否定:</strong><br>
         本サイトはフィクションと心理類型論を組み合わせた成人向けエンターテインメントです。医学的・精神分析的な診断や、性的同意・行動を確定的に推定するものではありません。</p>
+        <p><strong>4. 広告・アフィリエイトについて:</strong><br>
+        本サイトはアフィリエイトプログラム（A8.net、afb等）および広告配信サービスを利用しています。「PR」「広告」と表示した枠は広告であり、リンク先で商品・サービスをお申し込みいただいた場合、運営者が報酬を受け取ることがあります。広告配信事業者は、Cookieを使用して利用者の興味に応じた広告を表示することがあります。Cookieはブラウザの設定で無効にできます。診断の回答内容が広告事業者に送信されることはありません。</p>
+        <p><strong>5. 運営者・お問い合わせ:</strong><br>
+        運営者：Yufi Web Create<br>
+        お問い合わせ：<a href="https://docs.google.com/forms/d/e/1FAIpQLSegJyasaox7J7ZMo8IUu2_jmcyn90HtELxkwWotnnaGjl_Ogg/viewform" target="_blank" rel="noopener noreferrer" class="text-rose-main underline">お問い合わせフォーム</a></p>
       </div>
       <button onclick="app.closeModal('privacyModal')" class="mt-4 w-full py-2.5 rounded-xl bg-burgundy-deep text-white text-xs font-bold">
         閉じる
@@ -986,7 +1002,7 @@
           traits: ["従っているように見せて、実は相手をその気にさせてしまう天性のセンス。", "無防備な仕草や上目遣いで、相手の庇護欲と情熱を心地よく刺激する。", "「あなたがいなきゃダメ」という愛らしさで、相手の心を完全に掴む。"],
           icon: "cat" },
         "N3-D3": { no: "13", name: "鏡写しの共鳴者", catch: "相手の熱量をそのまま反射する、変幻自在のパートナー", code: "D3-N3",
-          traits: ["相手が甘えてくれば包み込み、相手が求めてくれば従う自在の柔軟性。", "その場のフィーリングに合わせて、攻守が自然に入れ替わる官能的な関係性。", "ふたりきりになった瞬間にスイッチが入り、深い一体感へ溶け込む。"],
+          traits: ["相手が甘えてくれば包み込み、相手が求めてくれば従う自在の柔軟性。", "その場のフィーリングに合わせて、攻守が自然に入れ替わる情熱的な関係性。", "ふたりきりになった瞬間にスイッチが入り、深い一体感へ溶け込む。"],
           icon: "arrows-spin" },
         "N3-D4": { no: "14", name: "情熱ナビゲーター", catch: "視線と仕草で相手を惹きつける、シネマティックな案内人", code: "D4-N3",
           traits: ["ムードとロマンチシズムを自在に操り、映画のような夜を創り出す。", "押し引きのバランスが絶妙で、相手に『もっと欲しい』と思わせる余韻。", "大人の色香と安心感を同居させた、非常に人を魅了する本能の持ち主。"],
@@ -1017,10 +1033,10 @@
           traits: ["自分という自我が消え去るほど、強烈な刺激と相手の愛に埋没したい。", "タブーも限界も恐れず、相手のためならどこまでも堕ちていける純粋な情熱。", "常識の枠組みを飛び越え、深い陶酔と悦楽の極致を追い求める。"],
           icon: "infinity" },
         "N5-D2": { no: "22", name: "秘密の冒険待ち", catch: "圧倒的なリードで日常を忘れさせてくれる相手を待つ快楽派", code: "D2-N5",
-          traits: ["自分から動くより、圧倒的な引力で未知の快感へ連れ去られたい願望。", "危険な香りを持つ相手や、予想のつかない急展開に本能が強く反応する。", "日常の退屈を吹き飛ばす刺激的な主導権を、全身で待ち望んでいる。"],
+          traits: ["自分から動くより、圧倒的な引力で未知のときめきへ連れ去られたい願望。", "危険な香りを持つ相手や、予想のつかない急展開に本能が強く反応する。", "日常の退屈を吹き飛ばす刺激的な主導権を、全身で待ち望んでいる。"],
           icon: "wine-glass" },
         "N5-D3": { no: "23", name: "自由な探求者", catch: "未知の快楽の地平線を共に目指す、ソウルメイト", code: "D3-N5",
-          traits: ["お互いのリミッターを外すことを許し合える、特別な絆を希求する。", "新しい場所、新しいシチュエーションへためらいなく飛び込む身軽さ。", "常識の枠組みを軽々と飛び越えて、濃厚な快感を共有する冒険心。"],
+          traits: ["お互いのリミッターを外すことを許し合える、特別な絆を希求する。", "新しい場所、新しいシチュエーションへためらいなく飛び込む身軽さ。", "常識の枠組みを軽々と飛び越えて、濃密な時間を分かち合う冒険心。"],
           icon: "compass" },
         "N5-D4": { no: "24", name: "大胆な冒険リーダー", catch: "退屈な日常を破壊する、ミッドナイト・ガイド", code: "D4-N5",
           traits: ["「こんなこと、初めてでしょ？」と悪戯っぽく囁いて世界を広げる導き手。", "相手の眠っていた感情の扉を次々にノックして楽しむ、尽きない好奇心。", "ふたりだけの禁断のルールを作り、非日常の世界へと大胆にエスコート。"],
@@ -1084,7 +1100,7 @@
           "T5-A2": "止める間もなく抱き寄せられて、そのまま相手の情熱にのみこまれる。押し返そうとした手も、いつの間にか相手の背中にしがみついていた。いけないことをしているような甘いスリルに、頭がくらくらする。",
           "T5-A3": "遠慮も駆け引きも、すべて脱ぎ捨てた。むき出しの気持ちのまま、正面からぶつかり合う。重なる吐息と体温の中で、どこまでが自分でどこからが相手なのか、わからなくなっていく。",
           "T5-A4": "抑えきれない気持ちのまま、何度も「好き、大好き」と口にする。相手も同じ熱さで応えてくれる。激しく抱きしめ合ううちに、まわりの音も、時間の感覚も、すっかり消えていた。",
-          "T5-A5": "理性なんて、とっくに焼き切れていた。何度も愛を確かめ合いながら、むさぼるように抱きしめ合う。心も身体もひとつに溶けていくような感覚の中で、ふたりは夜のいちばん深いところへ落ちていった。"
+          "T5-A5": "理性なんて、とっくに焼き切れていた。何度も愛を確かめ合いながら、求め合うように抱きしめ合う。心も身体もひとつに溶けていくような感覚の中で、ふたりは夜のいちばん深いところへ落ちていった。"
         };
 
         const scene = scenes[levels.S] || scenes[3];
@@ -1111,9 +1127,9 @@
           "N2-D5": "緻密なエスコートで相手の警戒を解き、気づけば逃げられない甘い夜へと誘う【完璧な演出家】。相手が望んでいる言葉や触れ方を先回りして与えながら、徐々にあなたなしではいられない空間へと丁寧に導きます。",
 
           "N3-D1": "相手からの熱烈な眼差しやアプローチを静かに待つ【愛され待ち】。自分からガツガツ動くより、強く求められ愛されることに深い悦びを感じます。ロマンチックなシチュエーションに弱く、相手の熱量に心地よく流されたいタイプです。",
-          "N3-D2": "守ってあげたいと思わせながら、実は相手を手のひらで転がしている【甘え上手】。無防備な吐息や上目遣いで、相手の独占欲を心地よく刺激します。従順に見せかけて相手の欲望を巧みに引き出す天性の才能があります。",
+          "N3-D2": "守ってあげたいと思わせながら、実は相手を手のひらで転がしている【甘え上手】。無防備な吐息や上目遣いで、相手の独占欲を心地よく刺激します。従順に見せかけて相手の本音を巧みに引き出す天性の才能があります。",
           "N3-D3": "相手が甘えてくれば包み込み、求めてくれば従う【鏡写しの共鳴者】。その場の熱量に合わせて攻守が自然に入れ替わる、変幻自在の柔軟性を持ちます。ふたりきりになった瞬間に深い一体感へと溶け込んでいきます。",
-          "N3-D4": "ロマンチックな演出と押し引きのバランスが絶妙な【情熱ナビゲーター】。大人の色香と安心感を同居させ、「もっと触れてほしい」と思わせる甘美な余韻を残します。映画のワンシーンのように美しく官能的な夜を仕立て上げます。",
+          "N3-D4": "ロマンチックな演出と押し引きのバランスが絶妙な【情熱ナビゲーター】。大人の色香と安心感を同居させ、「もっと触れてほしい」と思わせる甘美な余韻を残します。映画のワンシーンのように美しくロマンチックな夜を仕立て上げます。",
           "N3-D5": "華やかな色香と余裕のあるリードで相手を惹きつける【情熱の司令塔】。焦らしや緩急を自在に操り、相手が夢中になるまで決して許さない魅惑の強さがあります。愛されることとリードすることの境界線を美しく溶かす名手です。",
 
           "N4-D1": "強烈な引力に引きずり込まれるスリルに胸を躍らせる【誘惑されたい冒険家】。有無を言わさぬ圧倒的な主導権で翻弄されることに、背徳的な悦びを感じます。理性を根こそぎ剥ぎ取られる瞬間、本当の自分が目を覚まします。",
@@ -1123,8 +1139,8 @@
           "N4-D5": "相手を退屈させることを許さない【刺激のプロデューサー】。少し強引なリードで日常の常識を脱ぎ捨てさせ、誰も見たことのない熱狂とスリルの世界へと連れ去る力を持っています。予想のつかない急展開で相手を夢中にさせます。",
 
           "N5-D1": "自我が消え去るほど強烈な刺激と絶対の愛に身を捧げる【禁断の空想家】。タブーも限界も恐れず、魂ごと焼き尽くされるような究極の陶酔を心の奥底で求めています。相手のためならどこまでも堕ちていける純粋で狂気的な情熱を宿します。",
-          "N5-D2": "圧倒的な力で未知の快感へ連れ去られたいと願う【秘密の冒険待ち】。危険な香りや予想のつかない展開に本能が強く惹かれ、日常の退屈を忘れさせてくれる強い引力を待ち望んでいます。抗えない熱狂の波に身を投げ出したいタイプです。",
-          "N5-D3": "お互いのリミッターを外すことを許し合えるソウルメイトを求める【自由な探求者】。新しい場所やシチュエーションへ迷いなく飛び込み、常識の枠を越えた快楽を共有します。未知の官能やスリルの地平線をどこまでも探求したい冒険者です。",
+          "N5-D2": "圧倒的な力で未知のときめきへ連れ去られたいと願う【秘密の冒険待ち】。危険な香りや予想のつかない展開に本能が強く惹かれ、日常の退屈を忘れさせてくれる強い引力を待ち望んでいます。抗えない熱狂の波に身を投げ出したいタイプです。",
+          "N5-D3": "お互いのリミッターを外すことを許し合えるソウルメイトを求める【自由な探求者】。新しい場所やシチュエーションへ迷いなく飛び込み、常識の枠を越えた快楽を共有します。未知のときめきやスリルの地平線をどこまでも探求したい冒険者です。",
           "N5-D4": "「こんなこと、初めてでしょ？」と悪戯っぽく囁いて世界を広げる【大胆な冒険リーダー】。相手の眠っていた感情の扉を次々に開く、退屈な日常の破壊者です。常識の外側にある快楽や未知のシチュエーションへ相手を大胆にエスコートします。",
           "N5-D5": "未知の刺激と主導権の快楽を極限まで求める【自由奔放な小悪魔】。危険な香りやタブーすら最高の調味料に変え、相手の理性を焼き尽くして共に限界を越える熱い魂です。相手の隠された本能を引きずり出し、深い熱狂を刻みつけます。"
         };
@@ -1717,12 +1733,8 @@
        */
       getImageCandidates(code) {
         return [
-          `images/types/${code}.png`,       // 標準的なディレクトリ階層
-          `images:types:${code}.png`,       // ファイル名にコロンが含まれている形式
-          `images:types/${code}.png`,       // フォルダ名自体が「images:types」になっている場合
-          `images/${code}.png`,             // images直下に配置されている場合
-          `${code}.png`,                    // index.htmlと同じ階層に直接置かれている場合
-          `types/${code}.png`               // typesフォルダのみの場合
+          `images/types/${code}.webp`,
+          `images/types/${code}.png`
         ];
       }
 
@@ -1735,7 +1747,7 @@
         const candidates = cachedImg ? [cachedImg] : this.getImageCandidates(type.code);
         
         container.innerHTML = `
-          <div class="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl cursor-pointer group" onclick="app.triggerImageUpload()" title="クリックしてイラスト画像を変更">
+          <div class="relative w-full h-full flex items-center justify-center overflow-hidden rounded-2xl">
             <!-- イラスト画像（複数候補のパスを順次自動試行） -->
             <img 
               id="typeBadgeImg"
@@ -1753,11 +1765,6 @@
               </div>
               <span class="text-[10px] uppercase tracking-widest text-blush-accent font-bold opacity-80">${type.code}</span>
               <span class="text-xs font-serif-title font-bold text-white mt-0.5">${type.name}</span>
-            </div>
-            <!-- ホバー時の画像変更ガイド -->
-            <div class="absolute inset-0 bg-burgundy-darker/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex flex-col items-center justify-center text-white text-[11px] gap-1">
-              <i class="fa-solid fa-camera text-base"></i>
-              <span>画像を変更</span>
             </div>
           </div>
         `;
@@ -1827,11 +1834,11 @@
         });
       }
 
-      generateAndDownloadCard() {
+      drawResultCard() {
         const canvas = document.getElementById("cardExportCanvas");
         const ctx = canvas.getContext("2d");
         const t = this.resultType;
-        if (!t) return;
+        if (!t) return null;
 
         // Background gradient
         const bgGrad = ctx.createLinearGradient(0, 0, 1200, 630);
@@ -1975,15 +1982,97 @@
         ctx.font = "12px 'Noto Sans JP', sans-serif";
         ctx.fillText("※ 本画像には物語本文等のプライベートな内容は含まれません。 | 秘密の♡♡♡診断", 60, 565);
 
-        try {
-          const link = document.createElement("a");
-          link.download = `secret_diagnosis_${t.code}.png`;
-          link.href = canvas.toDataURL("image/png");
-          link.click();
-          this.showToast("結果カード画像を保存しました", "fa-download");
-        } catch (e) {
-          this.showToast("画像保存に失敗しました", "fa-circle-xmark");
+        return canvas;
+      }
+
+      // canvas → File（同期変換：共有シートのユーザー操作判定を切らさないため）
+      canvasToFile(canvas, filename) {
+        const dataUrl = canvas.toDataURL("image/png");
+        const bin = atob(dataUrl.split(",")[1]);
+        const arr = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+        return { dataUrl, file: new File([arr], filename, { type: "image/png" }) };
+      }
+
+      async shareImageFile(file, dataUrl, mode) {
+        const canShareFile = navigator.canShare && navigator.canShare({ files: [file] });
+        if (canShareFile) {
+          try {
+            await navigator.share({ files: [file] });
+            return;
+          } catch (e) {
+            if (e && e.name === "AbortError") return; // ユーザーがキャンセル
+          }
         }
+        this.showCardPreview(dataUrl, mode);
+      }
+
+      showCardPreview(dataUrl, mode) {
+        document.getElementById("cardPreviewImg").src = dataUrl;
+        document.getElementById("cardPreviewTitle").textContent =
+          mode === "story" ? "Instagramストーリーズ用画像" : "結果カード画像";
+        document.getElementById("cardPreviewGuide").textContent =
+          mode === "story"
+            ? "画像を長押しして「写真に保存」した後、Instagramのストーリーズ作成画面で選択してください。（PCの場合は右クリックで保存）"
+            : "画像を長押しして「写真に保存」してください。（PCの場合は右クリックで保存）";
+        this.openModal("cardPreviewModal");
+      }
+
+      saveCardImage() {
+        const canvas = this.drawResultCard();
+        if (!canvas) return;
+        const { dataUrl, file } = this.canvasToFile(canvas, `secret_diagnosis_${this.resultType.code}.png`);
+        this.shareImageFile(file, dataUrl, "card");
+      }
+
+      shareToInstagramStory() {
+        const card = this.drawResultCard();
+        if (!card) return;
+        const t = this.resultType;
+        const sc = document.createElement("canvas");
+        sc.width = 1080; sc.height = 1920;
+        const ctx = sc.getContext("2d");
+        const bg = ctx.createLinearGradient(0, 0, 0, 1920);
+        bg.addColorStop(0, "#381726");
+        bg.addColorStop(0.5, "#682F49");
+        bg.addColorStop(1, "#381726");
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, 1080, 1920);
+        ctx.fillStyle = "rgba(199, 101, 141, 0.18)";
+        ctx.beginPath(); ctx.arc(180, 300, 260, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(920, 1600, 300, 0, Math.PI * 2); ctx.fill();
+
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#F6D7E3";
+        ctx.font = "bold 40px 'Noto Sans JP', sans-serif";
+        ctx.fillText("大人のための恋愛タイプ診断", 540, 470);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 84px 'Noto Serif JP', serif";
+        ctx.fillText("秘密の♡♡♡診断", 540, 580);
+
+        const w = 1000, h = Math.round(card.height * (w / card.width));
+        const x = 40, y = 700;
+        ctx.save();
+        ctx.beginPath(); ctx.roundRect(x, y, w, h, 28); ctx.clip();
+        ctx.drawImage(card, x, y, w, h);
+        ctx.restore();
+        ctx.strokeStyle = "rgba(246, 215, 227, 0.6)";
+        ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.roundRect(x, y, w, h, 28); ctx.stroke();
+
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 52px 'Noto Serif JP', serif";
+        ctx.fillText(`わたしは【${t.name}】`, 540, y + h + 140);
+        ctx.fillStyle = "#F6D7E3";
+        ctx.font = "36px 'Noto Sans JP', sans-serif";
+        ctx.fillText("あなたの“秘密のタイプ”は？", 540, y + h + 230);
+        ctx.font = "30px 'Noto Sans JP', sans-serif";
+        ctx.fillStyle = "rgba(246, 215, 227, 0.85)";
+        ctx.fillText(window.location.host, 540, y + h + 290);
+        ctx.textAlign = "left";
+
+        const { dataUrl, file } = this.canvasToFile(sc, `secret_diagnosis_story_${t.code}.png`);
+        this.shareImageFile(file, dataUrl, "story");
       }
 
       shareOnTwitter() {
